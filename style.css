@@ -46,12 +46,12 @@ main {
   background-position: center;
   background-attachment: fixed;
   background-size: cover;
-  opacity: 0.96;                   /* vorher leer, jetzt gültig */
+  opacity: 0.96;
 }
 
 /* === INVITE CARD === */
 .invite-card {
-  max-width: 480px;                /* vorher 'px', jetzt sinnvoller Wert */
+  max-width: 480px;
   width: 100%;
   background: var(--card-bg);
   border-radius: 1.5rem;
@@ -79,7 +79,7 @@ main {
   background-image: url("bilder/flowers_corner.png");
   background-size: contain;
   background-repeat: no-repeat;
-  opacity: 0.55;                    /* das kaputte 'back' entfernt */
+  opacity: 0.55;
 }
 
 .flower-corner::before {
@@ -171,7 +171,7 @@ main {
 }
 
 .details-text{
-  /* leer gelassen, wie bei dir */
+  /* leer wie bei dir */
 }
 
 .details-form {
@@ -197,7 +197,7 @@ main {
   background-position: center;
   background-attachment: fixed;
   background-size: cover;
-  opacity: 0.96;                   /* vorher leer */
+  opacity: 0.96;
 }
 
 .card-slider {
@@ -266,19 +266,86 @@ footer {
   color: var(--text-soft);
 }
 
-/* ================================
-   RESPONSIVE / MOBILE & DESKTOP
-   ================================ */
+/* =========================================
+   RESPONSIVE / MOBILE & DESKTOP ANPASSUNGEN
+   ========================================= */
 
-/* Handy: etwas weniger Padding, Inhalte bleiben untereinander (ist schon ok so) */
+/* Handy / kleine Bildschirme */
 @media (max-width: 600px) {
+
+  body {
+    background-attachment: scroll;          /* fixed macht auf Handy oft Probleme */
+    background-position: top center;
+  }
+
   main {
-    padding: 1.5rem 1rem 3rem;
+    padding: 1.5rem 0.8rem 3rem;
+    gap: 1.4rem;
   }
 
   .invite-card,
   .card-gallery {
-    padding: 1.8rem 1.4rem;
+    max-width: 100%;
+    padding: 1.8rem 1.3rem;
+    border-radius: 1.2rem;
+    box-shadow: 0 10px 28px rgba(120, 92, 56, 0.18);
+  }
+
+  .invite-logo {
+    width: 100px;
+    height: 100px;
+  }
+
+  .invite-tagline {
+    font-size: 1.8rem;
+  }
+
+  .invite-title {
+    font-size: 1.6rem;
+  }
+
+  .invite-text {
+    font-size: 0.95rem;
+  }
+
+  /* Buttons untereinander, gut klickbar */
+  .invite-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .card-slider {
+    gap: 0.6rem;
+  }
+
+  .card-nav {
+    width: 34px;
+    height: 34px;
+  }
+}
+
+/* noch kleinere Geräte, z.B. sehr schmale Smartphones */
+@media (max-width: 400px) {
+  .invite-card,
+  .card-gallery {
+    padding: 1.5rem 1rem;
+  }
+
+  .invite-tagline {
+    font-size: 1.6rem;
+  }
+
+  .invite-title {
+    font-size: 1.4rem;
+  }
+
+  .invite-text {
+    font-size: 0.9rem;
   }
 }
 
