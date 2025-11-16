@@ -33,28 +33,25 @@ body {
 
 main {
   display: flex;
-  flex-direction: column;
+  flex-direction: column;          /* mobil: untereinander */
   align-items: center;
   padding: 2rem 1rem 4rem;
   gap: 1.8rem;
-  
 }
 
+/* === RSVP CARD === */
 #rsvp-card{
-
   background-image: url("bilder/ring.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
   background-size: cover;
-  opacity:
-
-
+  opacity: 0.96;                   /* vorher leer, jetzt gültig */
 }
 
 /* === INVITE CARD === */
 .invite-card {
-  max-width: px;
+  max-width: 480px;                /* vorher 'px', jetzt sinnvoller Wert */
   width: 100%;
   background: var(--card-bg);
   border-radius: 1.5rem;
@@ -82,8 +79,7 @@ main {
   background-image: url("bilder/flowers_corner.png");
   background-size: contain;
   background-repeat: no-repeat;
-  back
-  opacity: 0.55;
+  opacity: 0.55;                    /* das kaputte 'back' entfernt */
 }
 
 .flower-corner::before {
@@ -119,24 +115,18 @@ main {
   font-family: "Great Vibes", cursive;
   font-size: 2.1rem;
   color: var(--gold-dark);
-
- 
 }
 
 .invite-title {
   font-family: "Playfair Display", serif;
   font-size: 1.9rem;
   color: var(--gold-dark);
- 
-  
 }
 
 .invite-text {
   color: var(--text-soft);
   font-size: 1rem;
   margin-bottom: 1.6rem;
-
- 
 }
 
 /* === BUTTONS === */
@@ -178,14 +168,14 @@ main {
 .invite-message {
   min-height: 1.3rem;
   margin-bottom: .4rem;
-
 }
+
 .details-text{
- 
+  /* leer gelassen, wie bei dir */
 }
 
 .details-form {
-display: flex;
+  display: flex;
   flex-direction: column;
   align-items: center;
   gap: 0.6rem;
@@ -202,12 +192,12 @@ display: flex;
   padding: 1.7rem;
   box-shadow: 0 12px 32px rgba(120, 92, 56, 0.12);
 
-    background-image: url("bilder/ring.jpg");
+  background-image: url("bilder/ring.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
   background-size: cover;
-  opacity:
+  opacity: 0.96;                   /* vorher leer */
 }
 
 .card-slider {
@@ -274,4 +264,38 @@ footer {
   text-align: center;
   font-family: "Playfair Display", serif;
   color: var(--text-soft);
+}
+
+/* ================================
+   RESPONSIVE / MOBILE & DESKTOP
+   ================================ */
+
+/* Handy: etwas weniger Padding, Inhalte bleiben untereinander (ist schon ok so) */
+@media (max-width: 600px) {
+  main {
+    padding: 1.5rem 1rem 3rem;
+  }
+
+  .invite-card,
+  .card-gallery {
+    padding: 1.8rem 1.4rem;
+  }
+}
+
+/* Tablet & Desktop: beide Sektionen nebeneinander, gleich breit */
+@media (min-width: 900px) {
+  main {
+    flex-direction: row;          /* nebeneinander */
+    align-items: flex-start;
+    justify-content: center;
+    gap: 2rem;
+    max-width: 1100px;
+    margin-inline: auto;
+  }
+
+  .invite-card,
+  .card-gallery {
+    max-width: 520px;
+    flex: 1 1 0;                  /* gleiche Breite */
+  }
 }
