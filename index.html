@@ -37,8 +37,6 @@
     </div>
 
     <div id="invite-message" class="invite-message"></div>
-
-   
   </section>
 
   <!-- INVITATION CARD SLIDER -->
@@ -67,10 +65,37 @@
 
 </main>
 
+<!-- RSVP RESULTS SUMMARY (UNTERHALB DER ZWEI KARTEN) -->
+<section class="rsvp-stats">
+  <h2 class="rsvp-stats-heading">RSVP Summary</h2>
+
+  <div class="rsvp-stats-grid">
+    <div class="rsvp-stat-card rsvp-stat-yes">
+      <span class="rsvp-stat-label">Yes</span>
+      <span class="rsvp-stat-value" id="rsvp-yes-count">0</span>
+    </div>
+
+    <div class="rsvp-stat-card rsvp-stat-no">
+      <span class="rsvp-stat-label">No</span>
+      <span class="rsvp-stat-value" id="rsvp-no-count">0</span>
+    </div>
+
+    <div class="rsvp-stat-card rsvp-stat-total">
+      <span class="rsvp-stat-label">Total guests</span>
+      <span class="rsvp-stat-value" id="rsvp-total-count">0</span>
+    </div>
+  </div>
+
+  <p class="rsvp-stats-note">
+    (Update these numbers from Google Sheets.)
+  </p>
+</section>
+
 <footer>
-  Created with love by us for you Even&Fili@
+  Created with love by us for you
 </footer>
 
 <script src="script.js"></script>
 </body>
 </html>
+
