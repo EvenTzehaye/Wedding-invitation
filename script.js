@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Optional: auch "Sorry, I cannot attend" über dasselbe Formular
+  // Optional: auch "Sorry, I cannot attend" zum Formular führen
   if (noBtn) {
     noBtn.addEventListener("click", function () {
       window.open(GOOGLE_FORM_URL, "_blank");
