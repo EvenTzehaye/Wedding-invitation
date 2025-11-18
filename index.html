@@ -14,6 +14,15 @@
 </head>
 <body>
 
+<!-- SIDE BANNERS - ONLY TABLET & DESKTOP -->
+<div class="side-banner side-banner-left">
+  <img src="bilder/filmawit_Bewerbung_foto.jpg" alt="Left banner">
+</div>
+
+<div class="side-banner side-banner-right">
+  <img src="bilder/even-sideBanner Kopie.jpg" alt="Right banner">
+</div>
+
 <main>
 
   <!-- RSVP CARD -->
@@ -38,6 +47,12 @@
 
     <div id="invite-message" class="invite-message"></div>
 
+    <form id="details-form" class="details-form" hidden>
+      <p class="details-text">Thank you. Please write your name and number of guests.</p>
+      <input id="guest-name" type="text" placeholder="Name / Family">
+      <input id="guest-count" type="number" min="1" placeholder="Number of guests">
+      <button type="submit" class="btn btn-small">Confirm</button>
+    </form>
   </section>
 
   <!-- INVITATION CARD SLIDER -->
@@ -57,11 +72,14 @@
       <button class="card-nav card-next">❯</button>
     </div>
 
-    
+    <div class="card-dots">
+      <span class="dot active" data-index="0"></span>
+      <span class="dot" data-index="1"></span>
+      <span class="dot" data-index="2"></span>
+    </div>
   </section>
 
 </main>
-
 
 <footer>
   Created with love by us for you
@@ -70,5 +88,3 @@
 <script src="script.js"></script>
 </body>
 </html>
-
-
