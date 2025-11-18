@@ -15,15 +15,18 @@
   --no-soft: #fee2e2;
 }
 
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
+/* === BODY & MAIN LAYOUT === */
 body {
   margin: 0;
   font-family: "Inter", sans-serif;
   background: radial-gradient(circle at top, #f1e3d7 0, #faf6f4 45%, #faf6f4 100%);
   color: var(--text-main);
   line-height: 1.7;
-  
+
   background-image: url("bilder/background.jpg");
   background-repeat: no-repeat;
   background-position: center;
@@ -33,14 +36,16 @@ body {
 
 main {
   display: flex;
-  flex-direction: column;          /* mobil: untereinander */
+  flex-direction: column;      /* immer untereinander, auch auf PC */
   align-items: center;
   padding: 2rem 1rem 4rem;
   gap: 1.8rem;
+  max-width: 1100px;
+  margin-inline: auto;
 }
 
 /* === RSVP CARD === */
-#rsvp-card{
+#rsvp-card {
   background-image: url("bilder/ring.jpg");
   background-repeat: no-repeat;
   background-position: center;
@@ -51,7 +56,7 @@ main {
 
 /* === INVITE CARD === */
 .invite-card {
-  max-width: 780px;
+  max-width: 480px;
   width: 100%;
   background: var(--card-bg);
   border-radius: 1.5rem;
@@ -164,15 +169,13 @@ main {
   background: #fdf5e7;
 }
 
-/* === MESSAGES === */
+/* === MESSAGES & FORM === */
 .invite-message {
   min-height: 1.3rem;
   margin-bottom: .4rem;
 }
 
-.details-text{
-  /* leer wie bei dir */
-}
+
 
 .details-form {
   display: flex;
@@ -182,9 +185,9 @@ main {
   margin-top: 1rem;
 }
 
-/* === CARD SLIDER === */
+/* === CARD GALLERY / SLIDER === */
 .card-gallery {
-  max-width: 780px;
+  max-width: 100%;
   width: 100%;
   background: #ffffffee;
   border-radius: 1.3rem;
@@ -200,10 +203,25 @@ main {
   opacity: 0.96;
 }
 
+.gallery-heading {
+  font-family: "Playfair Display", serif;
+  text-align: center;
+  margin: 0 0 .3rem;
+  color: var(--gold-dark);
+}
+
+.gallery-sub {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 1.2rem;
+  color: var(--text-soft);
+  font-size: 0.95rem;
+}
+
 .card-slider {
   display: flex;
   align-items: center;
-  border-radius: 20px ;
+  border-radius: 20px;
   gap: .8rem;
 }
 
@@ -211,9 +229,7 @@ main {
   flex: 1;
   position: relative;
   height: 0;
-  padding-bottom: 100%;
-  border: #a88335;
-  border-radius: 20% ;
+  padding-bottom: 70%;
 }
 
 .card-image {
@@ -260,103 +276,62 @@ main {
   background: var(--gold-dark);
 }
 
-/* FOOTER */
+/* === FOOTER === */
 footer {
   margin-top: 20px;
   text-align: center;
   font-family: "Playfair Display", serif;
-  color: snow;
-  border: 2px solid #ead9be;
-   border-radius: 1.4rem;
-   background-color: #6f615c;
+  color: var(--text-soft);
+  padding-bottom: 1.5rem;
 }
 
-/* === RSVP STATS SUMMARY === */
-.rsvp-stats {
-  max-width: 520px;
+/* ============================================
+   SIDE BANNERS (LEFT & RIGHT) - TABLET + PC ONLY
+   ============================================ */
+
+.side-banner {
+  position: fixed;
+  top: 50%;
+  
+  transform: translateY(-50%);
+  width: 35%;
+  height: 100%;
+  padding: 50px;                 /* schmal */
+  z-index: 10;
+  display: none;               /* Standard: ausgeblendet (Mobile) */
+}
+
+.side-banner img {
   width: 100%;
-  margin: 0 auto 3rem;
-  background: #ffffffee;
-  border-radius: 1.4rem;
-  border: 2px solid #ead9be;
-  padding: 1.8rem 1.6rem;
-  box-shadow: 0 10px 28px rgba(120, 92, 56, 0.16);
+  height: 100vh;               /* lang und vertikal */
+  object-fit: cover;
+  border-radius: 14px;
+  opacity: 0.92;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.35);
 }
 
-.rsvp-stats-heading {
-  text-align: center;
-  font-family: "Playfair Display", serif;
-  font-size: 1.4rem;
-  color: var(--gold-dark);
-  margin-top: 0;
-  margin-bottom: 1.1rem;
+/* Position links + rechts */
+.side-banner-left {
+  left: 0;
 }
 
-.rsvp-stats-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 0.9rem;
-}
-
-.rsvp-stat-card {
-  border-radius: 1rem;
-  padding: 0.85rem 0.6rem;
-  text-align: center;
-  border: 1px solid rgba(0,0,0,0.04);
-  background: #fffdf8;
-}
-
-.rsvp-stat-label {
-  display: block;
-  font-size: 0.8rem;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
-  color: var(--text-soft);
-  margin-bottom: 0.3rem;
-}
-
-.rsvp-stat-value {
-  display: block;
-  font-size: 1.4rem;
-  font-weight: 600;
-}
-
-/* Farb-Akzente wie deine Buttons */
-.rsvp-stat-yes {
-  border-color: var(--yes-soft);
-  background: var(--yes-soft);
-  color: var(--yes);
-}
-
-.rsvp-stat-no {
-  border-color: var(--no-soft);
-  background: var(--no-soft);
-  color: var(--no);
-}
-
-.rsvp-stat-total {
-  border-color: var(--gold);
-  background: #fdf5e7;
-  color: var(--gold-dark);
-}
-
-.rsvp-stats-note {
-  margin-top: 0.9rem;
-  font-size: 0.8rem;
-  text-align: center;
-  color: var(--text-soft);
+.side-banner-right {
+  right: 0;
 }
 
 /* =========================================
-   RESPONSIVE / MOBILE & DESKTOP ANPASSUNGEN
+   BREAKPOINTS
    ========================================= */
 
-/* Handy / kleine Bildschirme */
-@media (max-width: 600px) {
+/* MOBILE: unter 768px → KEINE side banners */
+@media (max-width: 767px) {
+  .side-banner {
+    display: none !important;
+  }
 
   body {
-    background-attachment: fixed;
-    background-position: top center;
+    padding-left: 0;
+    padding-right: 0;
   }
 
   main {
@@ -378,7 +353,7 @@ footer {
   }
 
   .invite-tagline {
-    font-size: .8rem;
+    font-size: 1.8rem;
   }
 
   .invite-title {
@@ -407,22 +382,6 @@ footer {
     width: 34px;
     height: 34px;
   }
-
-  .rsvp-stats {
-    padding: 1.6rem 1.3rem;
-  }
-
-  .rsvp-stats-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .rsvp-stat-card {
-    padding: 1rem 0.8rem;
-  }
-
-  .rsvp-stat-value {
-    font-size: 1.6rem;
-  }
 }
 
 /* sehr schmale Smartphones */
@@ -445,4 +404,33 @@ footer {
   }
 }
 
+/* TABLET: ab 768px → Banner + etwas Rand */
+@media (min-width: 768px) and (max-width: 1099px) {
+  .side-banner {
+    display: block;
+  }
 
+  body {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+}
+
+
+
+/* DESKTOP: ab 1100px → Banner + etwas mehr Rand */
+@media (min-width: 1100px) {
+  .side-banner {
+    display: block;
+  }
+
+  body {
+    padding-left: 120px;
+    padding-right: 120px;
+  }
+
+  .invite-card,
+  .card-gallery {
+    max-width: 600px;
+  }
+}
