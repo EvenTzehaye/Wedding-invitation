@@ -109,7 +109,7 @@ main {
 .invite-logo img {
   width: 100%;
   object-fit: contain;
-  padding: 8px;
+  padding: 1px;
   border-radius: 50%;
   border: 2px solid var(--gold);
   background: #fffdf7;
@@ -297,7 +297,7 @@ footer {
   transform: translateY(-50%);
   width: 28%;
   height: 100%;
-  padding: 50px;                 /* schmal */
+  padding: 30px;                 /* schmal */
   z-index: 10;
   display: none;               /* Standard: ausgeblendet (Mobile) */
 }
@@ -391,15 +391,15 @@ footer {
 @media (max-width: 400px) {
   .invite-card,
   .card-gallery {
-    padding: 1.5rem 1rem;
+    padding: 1rem 1rem;
   }
 
   .invite-tagline {
-    font-size: 1.6rem;
+    font-size: 1.9rem;
   }
 
   .invite-title {
-    font-size: 1.4rem;
+    font-size: 1rem;
   }
 
   .invite-text {
@@ -414,14 +414,14 @@ footer {
   }
     .invite-card,
   .card-gallery {
-    max-width: 60%;
+    max-width: 50%;
     height: 10%;
   }
 }
 
   body {
-    padding-left: 100px;
-    padding-right: 100px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 
 
@@ -442,4 +442,27 @@ footer {
     max-width: 60%;
     height: 10%;
   }
+
+    .invite-tagline {
+    font-size: 3.9rem;
+    
+  }
+
+  .invite-title {
+    font-size: 2.8rem;
+  }
+
+  .invite-text {
+    font-size: 1rem;
+  }
+  .gallery-heading{
+
+   font-family: "Great Vibes", cursive;
+   font-size: 2.1rem;
+   color: var(--gold-dark);
+  }
+
+  .side-banner {
+   padding: 30px; 
+}
 }
