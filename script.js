@@ -1,4 +1,3 @@
-
 document.addEventListener("DOMContentLoaded", function () {
   const GOOGLE_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSerhukW0UQ54-O49QE14_3e4Orlxt5SnFOxMpC4uwNY_2QzKQ/viewform?usp=header";
 
